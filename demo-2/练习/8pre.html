@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-pre 会跳过该元素和它的子元素的编译过程,可以用来显示原始标签的内容.
+    跳过大量没有指令的节点会加块编译
+-->
+        <section v-pre>{{text}}</section>
+        你好
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                tetxt: "你是个憨憨"
+            }
+        })
+    </script>
+</body>
+
+</html>

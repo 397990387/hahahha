@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <section v-show="senn">
+            1:
+            <img :src="image">
+        </section>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                senn: true, //可不可见true
+                image: "../../img/lgx.jpg"
+            }
+        })
+    </script>
+</body>
+
+</html>

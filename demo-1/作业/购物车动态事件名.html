@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+        <button @[eventname]="add(10,$event)">+</button>
+        <span>{{num}}</span>
+        <button @[eventname]="sub">-</button>
+        <script src="../../vue.js"></script>
+        <script>
+            let vm = new Vue({
+                el: ".app",
+                data: {
+                    num: 0,
+                    eventname: "dblclick"
+                },
+                methods: {
+                    add: function(step, e) {
+                        this.num = this.num + step;
+                    },
+                    sub: function() {
+                        if (this.num - 1 < 0) {
+                            alert("憨逼,不能再点了")
+                        } else {
+                            this.num = this.num - 1
+                        }
+                    }
+                },
+            })
+        </script>
+    </div>
+</body>
+
+</html>

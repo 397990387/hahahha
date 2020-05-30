@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="app">
+        <h2>{{msg}}</h2>
+        <button @click='receiveParams(100,$event)'>按钮</button>
+        <button @click='receiveParams(100,$event)'>按钮</button>
+
+    </div>
+
+</body>
+<!-- 引入 vue 的开发基本库 -->
+<script src="../../vue.js"></script>
+<script>
+    new Vue({
+        el: '.app',
+        data: {
+            msg: 'hello world！！'
+        },
+        methods: {
+            eventHandle(ev) {
+                alert('事件句柄触发')
+            },
+            receiveParams(val, ev) {
+                alert(val);
+                console.log(ev.target)
+            }
+        }
+    })
+</script>
+
+</html>

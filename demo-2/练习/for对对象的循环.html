@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 对数组的便利 -->
+        <section v-for="e,i in arr">
+            {{i}}:{{e}}
+        </section>
+        <section v-for="item,index of arr">
+            {{index}}:{{item}}
+        </section>
+        <!-- 对对象的遍历 -->
+        <section v-for="(val,key,index) in obj">
+            {{index}}:{{val}}
+        </section>
+        <section v-for="(value,key,i) in obj">
+            {{i}}:{{value}}
+        </section>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                arr: ["香蕉", "苹果", "梨", "草莓"],
+                obj: {
+                    name: "李二狗",
+                    sex: "男",
+                    age: 23
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

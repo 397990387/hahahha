@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--绑定数据到属性上时 
+    class的属性值也可以写任意表达式，
+    但是变量也必须是vue的属性或者方法。 -->
+    <!-- <div id='app' v-bind:class='className' v-bind:title='msg'>{{msg}}</div> -->
+    <!-- 简写 -->
+    <div id='app' :class='cl' :title='msg'>{{msg}}</div>
+    <script src="../../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                cl: "active",
+                msg: "hello world !!!"
+            }
+        })
+    </script>
+</body>
+
+</html>

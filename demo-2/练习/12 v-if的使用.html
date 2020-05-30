@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <section v-if="seen">
+            1:<img :src="image" />
+        </section>
+        <section v-else-if="seen1">
+            2:<img :src="image" />
+        </section>
+        <section v-else=>
+            3:<img :src="image" />
+        </section>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                seen: false,
+                seen1: false,
+                image: "../../img/rb.jpg"
+            }
+        })
+    </script>
+</body>
+
+</html>

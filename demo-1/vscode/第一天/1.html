@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="app">
+        <h2>{{name}} beautiful !!!!</h2>
+        {{}}
+    </div>
+</body>
+<!-- 引入 vue 的开发基本库 -->
+<script src="../../vue.js"></script>
+<script>
+    new Vue({
+        // el：是element的缩写，通过选中选择类名来页面的元素
+        el: ".app",
+        //data 是参数
+        data: {
+            name: "球球,"
+
+        }
+    })
+</script>
+
+</html>

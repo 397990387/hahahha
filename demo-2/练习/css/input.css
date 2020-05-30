@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: pink;
+}
+#app #login.app-login {
+  width: 375px;
+  height: 280px;
+  margin: 200px auto;
+  background-color: white;
+  border-radius: 5px;
+}
+#app #login.app-login .app-title {
+  margin: auto;
+  text-align: center;
+  line-height: 46px;
+  height: 46px;
+  width: 325px;
+  border-bottom: 1px solid #dddddd;
+}
+#app #login.app-login .app-content {
+  margin-top: 20px ;
+}
+#app #login.app-login .app-content .top {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin: auto;
+  display: flex;
+  height: 48px;
+  width: 325px;
+  align-items: center;
+}
+#app #login.app-login .app-content .top .left {
+  flex: 2;
+}
+#app #login.app-login .app-content .top .right {
+  flex: 8;
+}
+#app #login.app-login .app-content .top .right input {
+  padding: 2px;
+  border: none;
+  height: 46px;
+  width: 100%;
+}
+#app #login.app-login .app-content .bottom {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  height: 48px;
+  width: 325px;
+}
+#app #login.app-login .app-content .bottom .left {
+  flex: 7;
+}
+#app #login.app-login .app-content .bottom .left input {
+  border: none;
+  height: 46px;
+  width: 100%;
+}
+#app #login.app-login .app-content .bottom .right {
+  height: 46px;
+  line-height: 46px;
+  text-align: right;
+  flex: 3;
+}
+#app #login.app-login .app-confirm {
+  margin: auto;
+  margin-top: 28px;
+  width: 325px;
+  height: 46px;
+  text-align: center;
+  line-height: 46px;
+  background-color: #f4525c;
+  color: white;
+  border-radius: 5px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-text 及v-html的使用 -->
+        <!-- text里面只能放文本 ,怒能放html标签 -->
+        <section v-text="text"></section>
+        <section v-html="rawhtml"></section>
+        <!-- 颠倒位置 -->
+        <section v-text="rawhtml"></section>
+        <section v-html="text"></section>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                text: "你是个铁憨憨",
+                rawhtml: '<div id="lg"><img hidefocus="true" src="//www.baidu.com/img/bd_logo1.png" width="270" height="129"></div>'
+            }
+        })
+    </script>
+</body>
+
+</html>

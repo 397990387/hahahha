@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 静态属性传入 -->
+        <blog-post title="张三"></blog-post>
+        <blog-post title="title"></blog-post>
+        <!-- 动态属性传入 -->
+        <blog-post :title="title"></blog-post>
+        <blog-post v-bind:title="title"></blog-post>
+        <blog-post v-for="item,index of post" :key="index" :title="item"></blog-post>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        Vue.component("blog-post", {
+            //通过props接受属性
+            props: ["title"],
+            template: `<h1>{{title}}</h1>`
+        })
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                title: "小花",
+                post: ["床前明月光", "举头望明月", "💯"]
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <section>
+            <!-- 多选框 -->
+            <input type="checkbox" value="banana" v-model="checkboxValues" id="checkbox1" />
+            <label for="checkbox1">香蕉</label>
+            <input type="checkbox" value="apple" v-model="checkboxValues" id="checkbox2" />
+            <label for="checkbox2">苹果</label>
+            <input type="checkbox" value="pear" v-model="checkboxValues" id="checkbox3" />
+            <label for="checkbox3">梨</label>
+            <input type="checkbox" value="wash" v-model="checkboxValues" id="checkbox4" />
+            <label for="checkbox4">西瓜</label> {{checkboxValues}}
+        </section>
+        <section>
+            <!-- 单选框 -->
+            <input type="radio" v-model="single" value="我是个单选框"> {{single}}
+        </section>
+        <section>
+            <!-- 多个radio(单选框) -->
+            <input type="radio" value="banana" v-model="radioValues" id="radio1" />
+            <label for="checkbox1">香蕉</label>
+            <input type="radio" value="apple" v-model="radioValues" id="radio2" />
+            <label for="checkbox2">苹果</label>
+            <input type="radio" value="pear" v-model="radioValues" id="radio3" />
+            <label for="checkbox3">梨</label>
+            <input type="radio" value="wash" v-model="radioValues" id="radio4" />
+            <label for="checkbox4">西瓜</label> {{radioValues}}
+        </section>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                checkboxValues: [],
+                single: "",
+                radioValues: ""
+            }
+        })
+    </script>
+</body>
+
+</html>

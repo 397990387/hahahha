@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/baidu.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <section class="nav-item-left">
+            <div class="item-left" v-for="item index in news">{{item}}</div>
+        </section>
+        <section class="nva-item-right">
+            <div class="item-right" style="color: red;">{{kangji}}</div>
+            <div class="item-right">{{seting}}</div>
+            <div class="item-right" style="color:white;border-radius:5px;height:30px;line-height:30px;text-align:center;width:60px;background-color:blue">{{btn}}</div>
+        </section>
+    </nav>
+    <script src="../../vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: ".nav",
+            data: {
+                news: [
+                    '新闻',
+                    'hao132',
+                    '地图',
+                    '视频',
+                    '贴吧',
+                    '学术',
+                    '更多',
+
+                ],
+                code: ['抗击疫情',
+                    '设置',
+                    '登入'
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

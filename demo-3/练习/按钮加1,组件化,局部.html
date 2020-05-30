@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button-conter></button-conter>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        let ButtonConter = {
+            //局部中的数据
+            data: function() {
+                return {
+                    num: 0
+                }
+            },
+            template: `
+            <button @click="handelclick">点击数字加1 {{num}}</button>
+            `,
+            methods: {
+                handelclick: function() {
+                    this.num++
+                }
+            }
+
+        }
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                num: 0
+            },
+            components: {
+                "button-conter": ButtonConter
+            }
+        })
+    </script>
+</body>
+
+</html>

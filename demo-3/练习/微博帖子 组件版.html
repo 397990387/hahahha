@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/weibo.css">
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <section class="app-box">
+            <!-- 头部开始 -->
+            <app-title></app-title>
+            <!-- 头部结束 -->
+            <!-- 文本框开始 -->
+            <app-conter></app-conter>
+            <!-- 文本框结束 -->
+            <!-- footer开始 -->
+            <app-footer></app-footer>
+            <!-- footer结束 -->
+
+        </section>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        Vue.component("app-title", {
+            template: `
+            <section class="box-title">
+                <section class="left">有什么新鲜事项告诉大家</section>
+                <section class="right">热门微博</section>
+            </section>
+            `
+        })
+        Vue.component("app-conter", {
+            template: `
+            <section class="box-conter">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </section>
+            `
+        })
+        Vue.component("app-footer", {
+            template: `
+            <section class="box-footer">
+                <section class="left">
+                    <section class="item">表情</section>
+                    <section class="item">图片</section>
+                    <section class="item">视频</section>
+                    <section class="item">话题</section>
+                    <section class="item">头条文章</section>
+                </section>
+                <section class="right">
+                    发帖
+                </section>
+
+            </section>
+            `
+        })
+        let vm = new Vue({
+            el: "#app",
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

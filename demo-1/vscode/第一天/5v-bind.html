@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 {
+            background-color: pink;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <label for="r1">修改颜色</label><input type="checkbox" v-model="use" id="r1">
+        <br><br>
+        <div v-bind:class="{'div1': use}">
+            v-bind:class 指令
+        </div>
+    </div>
+
+</body>
+<script src="../../vue.js"></script>
+<script>
+    new Vue({
+        el: ".div",
+        data: {
+            use: false
+        }
+    })
+</script>
+
+</html>

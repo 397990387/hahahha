@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- seen表示是否插入p标签  -->
+    <div id="app">
+        <p v-if="seen">现在你看到我了</p>
+        <template v-if="ok">
+          <h1>菜鸟教程</h1>
+          <p>学的不仅是技术，更是梦想！</p>
+          <p>哈哈哈，打字辛苦啊！！！</p>
+        </template>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                seen: true,
+                ok: false
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="ul">
+        <li v-for='(d,i) in arr'>
+            {{d}}
+            <button @click='eventHandle(i)'>插入新li</button>
+        </li>
+    </ul>
+</body>
+<script src="../../vue.js"></script>
+<script>
+    new Vue({
+        el: '.ul',
+        data: {
+            arr: [6666, 2222, 3333]
+        },
+        methods: {
+            eventHandle(i) {
+                this.arr[i].splice(i, 1)
+            }
+        }
+    })
+</script>
+
+</html>

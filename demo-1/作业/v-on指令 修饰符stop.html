@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <nav @click="handnavclick">
+            <!-- .stop 组织冒泡事件 -->
+            <div @click.stop="handitemclick">项目一</div>
+            <div @click.stop="handitemclick">项目二</div>
+            <div @click.stop="handitemclick">项目三</div>
+            <div @click.stop="handitemclick">项目四</div>
+        </nav>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            methods: {
+                handitemclick: function() {
+                    console.log("子项")
+                },
+                handnavclick: function() {
+                    console.log("福相")
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

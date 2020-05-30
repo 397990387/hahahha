@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <todou @click="handleclick($event)"></todou>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        Vue.component("todou", {
+            data: function() {
+                return {
+                    inputVal: "",
+                    values: []
+                }
+            },
+            template: `
+                <section>
+                <section>
+                    <input type="text" v-model="inputVal">
+                    <button @click="add">添加</button>
+                </section>
+                <section>
+                    <ul>
+                        <li v-for="item,index in values">
+                            {{item}}<button @click="del(index)">删除</button>
+                        </li>
+                    </ul>
+                </section>   
+                </section>
+
+            `,
+            methods: {
+                add: function() {
+                    if (!this.inputVal.trim()) {
+                        alert("请输入非空文字")
+                        return
+                    }
+                    this.values.push(this.inputVal);
+                    this.inputVal = ""
+                },
+                del: function(index) {
+                    this.values.splice(index, 1)
+                }
+            },
+        })
+        let vm = new Vue({
+            el: "#app",
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

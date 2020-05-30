@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <h1 @mouseenter="changstyle" @mouseleave="removestyle" v-bind:class="red">鼠标字体变大红</h1>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: ".div",
+            data: {
+                red: ""
+            },
+            methods: {
+                changstyle: function() {
+                    this.red = "red"
+                },
+                removestyle: function() {
+                    this.red = ""
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

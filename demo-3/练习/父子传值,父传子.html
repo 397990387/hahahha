@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <demo :title="title">
+
+        </demo>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        //父传子,通过属性传
+        Vue.component("demo", {
+            props: ["title"],
+            template: `
+            <section>
+                <h1>{{title}}</h1>
+            </section>
+            `
+        })
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                title: "父传子案例"
+            }
+        })
+    </script>
+</body>
+
+</html>

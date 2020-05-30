@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //for..in 对应得是对象
+        //for.. of 对应得是数组
+        let arr = [1, 2, 3, 5, 6]
+        for (let item in arr) {
+            //for..in 循环数组输出的下标
+            console.log(item)
+        }
+        for (let item of arr) {
+            //for..of 循环数组输出的e元素
+            console.log(item)
+        }
+        let obj = {
+            name: "张三",
+            age: 14,
+            hoppy: "打篮球"
+        }
+        for (let item in obj) {
+            console.log(item) //输出健名
+            console.log(item, obj[item]) //输出值
+        }
+    </script>
+</body>
+
+</html>

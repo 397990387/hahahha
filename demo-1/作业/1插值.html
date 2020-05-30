@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 文本 -->
+        <h1>{{"100分"}}</h1>
+        <!-- 变量 -->
+        <h1>{{text}}</h1>
+        <!-- html代码 -->
+        <h1 v-html="raw"></h1>
+        <!-- 属性 -->
+        <h1 id="id"></h1>
+        <!-- 以前html的写法 -->
+        <h1 id="id+😁"></h1>
+        <!-- 现在vue的写法 -->
+        <h1 v-bind:id="id">id</h1>
+        <h1 v-bind:id="id+'☺'">id😁</h1>
+        <!-- 表达式 -->
+        <h1> a+b={{a+b}}</h1>
+        <h1>{{msg+"☂️"}}</h1>
+        <h1>{{ok?"💯":"👍"}}</h1>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                text: "💯 100万 👍 😁 ☠️ ",
+                raw: "<span style='color:pink'>粉色</span>",
+                id: 12356,
+                a: 3,
+                b: 6,
+                msg: "憨憨",
+                OK: true
+            }
+        })
+    </script>
+
+</body>
+
+</html>

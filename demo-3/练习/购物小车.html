@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <table>
+            <thead>
+                <th>编号</th>
+                <th>名称</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>总价</th>
+            </thead>
+            <tbody>
+                <tr v-for="item,index of products">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td>
+                        <button @click="add(index)">+</button> {{item.num}}<button @click="sub(index)">-</button>
+
+                    </td>
+                    <td>{{item.price*item.num}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <section>总价:{{getToalprice}}</section>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                products: [{
+                    id: 1,
+                    name: "apple",
+                    price: 3,
+                    num: 2,
+                }, {
+                    id: 2,
+                    name: "paer",
+                    price: 4,
+                    num: 3,
+                }, {
+                    id: 3,
+                    name: "banana",
+                    price: 5,
+                    num: 4,
+                }]
+            },
+            computed: {
+                getToalprice() {
+                    let products = this.products;
+                    let totalprice = 0;
+                    for (let item of products) {
+                        totalprice += item.num * item.price
+                    }
+                    return totalprice;
+                }
+            },
+            methods: {
+                add: function(index) {
+                    console.log(this.products[index].num)
+
+                    this.products[index].num++
+                },
+                sub: function(index) {
+                    if (this.products[index] - 1 === 0) {
+                        alert("大爷手下留情,不要在减了")
+                        return;
+                    }
+                    this.products[index].num--;
+
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

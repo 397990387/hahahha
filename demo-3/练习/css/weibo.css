@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#app .app-box {
+  margin: 200px auto;
+  width: 650px;
+  height: 300px;
+  border: 1px solid black;
+  padding: 0 20px;
+}
+#app .app-box .box-title {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+#app .app-box .box-title .left {
+  color: #dd9e8e;
+}
+#app .app-box .box-title .right {
+  color: #dd9e8e;
+}
+#app .app-box .box-conter textarea {
+  width: 100%;
+}
+#app .app-box .box-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app .app-box .box-footer .left {
+  display: flex;
+  height: 80px;
+  align-items: center;
+}
+#app .app-box .box-footer .left .item {
+  margin-right: 20px;
+}
+#app .app-box .box-footer .right {
+  width: 120px;
+  height: 60px;
+  border-radius: 5px;
+  line-height: 60px;
+  text-align: center;
+  color: white;
+  background-color: #f2bfa0;
+}
